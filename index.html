@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="js/devDet.js"></script>
+    <script src="js/webspeech-comp.js"></script>
+    <script src="js/app.js"></script>
     <title>Document</title>
 </head>
 <body>
         <a-scene>
             <a-assets>
                     <a-asset-item id="world" src="models/worldmap.glb"></a-asset-item>
+                    <img id="bg" src="imgs/bg.jpg">
             </a-assets>
             <a-entity gltf-model="#world" position="0 2 -5" rotation="90 0 0"></a-entity>
+            <a-sky src="#bg"></a-sky>
         </a-scene>
+        <web-speech vr></web-speech>
 </body>
 </html>
