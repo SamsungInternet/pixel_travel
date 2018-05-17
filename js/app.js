@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    deviceDetection();
+    
 });
 
 var wsc_onspeechend = function(){};

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/edf84e6e/webcomponents-sd-ce.js"></script>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="js/devDet.js"></script>
     <script src="js/webspeech-comp.js"></script>
@@ -16,6 +17,10 @@
                     <a-asset-item id="world" src="models/worldmap.glb"></a-asset-item>
                     <img id="bg" src="imgs/bg.jpg">
             </a-assets>
+
+            <a-entity camera look-controls>
+            </a-entity>
+
             <a-entity gltf-model="#world" position="0 2 -5" rotation="90 0 0"></a-entity>
             <a-sky src="#bg"></a-sky>
         </a-scene>
