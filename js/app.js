@@ -9,5 +9,5 @@ let wsc_onresult = function(word){
 };
 
 let layout_item_click = function(){
-    console.log('item location clicked');
+    console.log(this.getAttribute('src'));
 };
