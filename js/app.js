@@ -13,5 +13,5 @@ let layout_item_click = function(){
 };
 
 let changeSky = function(newsky){
-    document.querySelector('a-sky').setAttribute('src', '../imgs/'+newsky);
+    document.querySelector('a-sky').setAttribute('src', '../'+newsky);
 };
