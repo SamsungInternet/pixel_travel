@@ -52,7 +52,7 @@ AFRAME.registerComponent('a-layout', {
             layout.rotate.stop();
         }
         document.querySelector('a-scene').appendChild(layout);
-        console.log('a-layout init-ed');
+        layout.rotate.start();
     }
 
 });
