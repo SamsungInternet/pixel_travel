@@ -9,7 +9,7 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
     <script src="js/a-layout.js"></script>
-    <script src="js/devDet.js"></script>
+    <!-- <script src="js/devDet.js"></script> -->
     <script src="https://samsunginter.net/web-speech-component/js/webspeech-comp.js"></script>
     <script src="js/app.js"></script>
     <title>Document</title>
@@ -27,31 +27,32 @@
 
             <a-entity camera look-controls></a-entity>
 
-            <a-entity progressive-controls="objects: .telesphere; maxLevel: point">
+            <a-entity progressive-controls=" maxLevel: point">
                 <a-entity id="rhand" class="right-controller"></a-entity>
                 <a-entity id="lhand" class="left-controller"></a-entity>  
             </a-entity>
 
-            <a-entity>
-                <a-animation attribute="rotation" to="0 359 0" dur="240000" easing="linear"></a-animation>
-                <a-entity a-layout position="0 0 0">
-                    <a-sphere src="imgs/360o/staines.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
-                    <a-sphere src="imgs/360o/helsinki.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/seoul.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/sevilla.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/singapore.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/losangeles.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
-                    <a-sphere src="imgs/360o/paris.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/sanjose.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                    <a-sphere src="imgs/360o/jerusalem.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                </a-entity>
+            <a-entity a-layout position="0 0 0">
+                <a-sphere src="imgs/360o/staines.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
+                <a-sphere src="imgs/360o/helsinki.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/seoul.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/sevilla.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/singapore.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/losangeles.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
+                <a-sphere src="imgs/360o/paris.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/sanjose.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/jerusalem.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
             </a-entity>
+            <a-sphere class="darken-bubble" color="#000" position="0 0 0" scale="1 1 1" radius="20" material="side:back" opacity=".7">
+                <a-animation attribute="opacity" dur="1000" fill="both" from=".7" begin="min" to="0"></a-animation>
+                <a-animation attribute="opacity" dur="1000" fill="both" from="0" begin="max" to=".7"></a-animation>
+            </a-sphere>
 
             <!-- <a-entity gltf-model="#world" position="0 -2 0" rotation="0 0 0"></a-entity> -->
             <a-sky src="#bg"></a-sky>
 
             <a-image src="#foot" position="0 -2 0" scale="3 3 3" rotation="-90 0 0"></a-image>
         </a-scene>
-        <web-speech vr></web-speech>
+        <web-speech class="btn_mic" vr></web-speech>
 </body>
 </html>

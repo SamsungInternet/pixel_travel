@@ -3,16 +3,14 @@
 AFRAME.registerComponent('a-layout', {
     schema: {
         shape:{type: 'string', default: 'circle'},
-        dur_lap:{type: 'int', default:10000}
+        dur_lap:{type: 'int', default:240000}
     },
 
     init: function(){
         let imgs = this.el.children;
         let num_imgs = this.el.children.length;
-        let layout = document.createElement('a-entity');
-        layout.setAttribute('id', 'layout');
-        layout.rotate = new AFRAME.TWEEN.Tween(layout.object3D.rotation).to({y:toRadians(359)}, this.data.dur_lap);
-        layout.setCircle = function(r){
+        this.rotate = new AFRAME.TWEEN.Tween(this.el.object3D.rotation).to({y:toRadians(359)}, this.data.dur_lap);
+        this.setCircle = function(r){
             circ_rad = r;
             let ang = 360/num_imgs;
             for(i = 0; i < num_imgs; i++){
@@ -27,7 +25,7 @@ AFRAME.registerComponent('a-layout', {
                 //tween_pos.start();
             }
         };
-        layout.setGrid = function(pc){
+        this.setGrid = function(pc){
             let f =0, c = 0;
             for(i = 0; i < num_imgs; i++){
                 //position: imgs[i].object3D.position.set(c * img_w + spacer, f * img_h, -6);
@@ -44,17 +42,14 @@ AFRAME.registerComponent('a-layout', {
         };
         switch(this.data.shape){
             case 'circle':
-                layout.setCircle(6);
-                layout.rotate.start();
+            this.setCircle(6);
+                this.rotate.start();
                 break;
             case 'grid':
-            layout.setGrid(3);
-            layout.rotate.stop();
+            this.setGrid(3);
+            this.rotate.stop();
         }
-        document.querySelector('a-scene').appendChild(layout);
-        layout.rotate.start();
     }
-
 });
 
 /* utils */
