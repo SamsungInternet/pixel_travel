@@ -19,23 +19,27 @@
             <a-assets>
                     <a-asset-item id="world" src="models/worldmap.glb"></a-asset-item>
                     <img id="bg" src="imgs/bg.jpg">
-
+                    <a-mixin id="location" hoverable grabbable stretchable draggable droppable shadow scale="-1 1 1" radius=".6">
+                    </a-mixin>
             </a-assets>
 
             <a-entity camera look-controls></a-entity>
 
-            <a-entity progressive-controls></a-entity>
+            <a-entity progressive-controls="objects: .telesphere; maxLevel: point">
+                <a-entity id="rhand" class="right-controller"></a-entity>
+                <a-entity id="lhand" class="left-controller"></a-entity>      
+            </a-entity>
 
             <a-entity a-layout position="0 0 0">
-                <a-sphere src="imgs/360o/staines.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable radius=".6" scale="-1 1 1"></a-sphere>
-                <a-sphere src="imgs/360o/helsinki.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable scale="-1 1 1" radius=".6"></a-sphere>
-                <a-sphere src="imgs/360o/seoul.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable scale="-1 1 1" radius=".6"></a-sphere>
-                <a-sphere src="imgs/360o/sevilla.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable scale="-1 1 1" radius=".6"></a-sphere>
-                <a-sphere src="imgs/360o/singapore.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable scale="-1 1 1" radius=".6"></a-sphere>
-                <a-sphere src="imgs/360o/losangeles.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable radius=".6" scale="-1 1 1"></a-sphere>
-                <a-sphere src="imgs/360o/paris.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable radius=".6" scale="-1 1 1"></a-sphere>
-                <a-sphere src="imgs/360o/sanjose.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable radius=".6" scale="-1 1 1"></a-sphere>
-                <a-sphere src="imgs/360o/jerusalem.jpg" class="telesphere" hoverable grabbable stretchable draggable droppable scale="-1 1 1" radius=".6"></a-sphere>
+                <a-sphere src="imgs/360o/staines.jpg" class="telesphere" mixin="location" ></a-sphere>
+                <a-sphere src="imgs/360o/helsinki.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/seoul.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/sevilla.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/singapore.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/losangeles.jpg" class="telesphere" mixin="location" ></a-sphere>
+                <a-sphere src="imgs/360o/paris.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/sanjose.jpg" class="telesphere" mixin="location"></a-sphere>
+                <a-sphere src="imgs/360o/jerusalem.jpg" class="telesphere" mixin="location"></a-sphere>
             </a-entity>
 
             <a-entity gltf-model="#world" position="0 -2 0" rotation="0 0 0"></a-entity>

@@ -21,6 +21,7 @@ AFRAME.registerComponent('a-layout', {
                 //tween_rot.easing(TWEEN.Easing.Cubic.Out);
                 //tween_rot.start();
                 imgs[i].object3D.position.set(circ_rad * Math.cos(toRadians(ang * i)), 0, circ_rad * Math.sin(toRadians(ang * i)));
+                imgs[i].addEventListener('click', layout_item_click);
                 //let tween_pos = new AFRAME.TWEEN.Tween(imgs[i].object3D.position).to({x:(circ_rad * Math.cos(toRadians(ang * i))), y: 1, z:(circ_rad * Math.sin(toRadians(ang * i)))}, trans_lapse);
                 //tween_pos.easing(TWEEN.Easing.Cubic.Out);
                 //tween_pos.start();

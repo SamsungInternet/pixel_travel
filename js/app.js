@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-var wsc_onspeechend = function(){};
+let wsc_onspeechend = function(){};
 
-var wsc_onresult = function(word){
+let wsc_onresult = function(word){
     alert(word);
 };
 
+let layout_item_click = function(){
+    console.log('item location clicked');
+};
