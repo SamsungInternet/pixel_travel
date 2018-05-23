@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-back').addEventListener('click', function(){
         maximizeLayout();
     });
+    let ctrl_pnl = document.getElementById('ctrl-pnl');
+    moveTo(ctrl_pnl, {x:0, y:-20, z:0}, 2000);
 });
 
 let wsc_onspeechend = function(){};
@@ -29,17 +31,23 @@ let changeSky = function(newsky){
 let minimizeLayout = function(){
     let layout = document.querySelector('[a-layout]');
     let dbubble = document.querySelector('.darken-bubble');
+    let ctrl_pnl = document.getElementById('ctrl-pnl');
     moveTo(layout, {x:0, y:-20, z:0}, 2000);
     scaleTo(layout, {x:0.0001, y:0.001, z:0.001}, 1500);
     dbubble.children[0].start();
+    moveTo(ctrl_pnl, {x:0, y:-2, z:-2}, 2000);
+    scaleTo(ctrl_pnl, {x:1, y:1, z:1}, 1500);
 };
 
 let maximizeLayout = function(){
     let layout = document.querySelector('[a-layout]');
     let dbubble = document.querySelector('.darken-bubble');
+    let ctrl_pnl = document.getElementById('ctrl-pnl');
     moveTo(layout, {x:0, y:0, z:0}, 2000);
     scaleTo(layout, {x:1, y:1, z:1}, 1500);
     dbubble.children[1].start();
+    moveTo(ctrl_pnl, {x:0, y:-20, z:0}, 2000);
+    scaleTo(ctrl_pnl, {x:0.0001, y:0.001, z:0.001}, 1500);
 };
 
 
