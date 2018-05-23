@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
+    document.getElementById('btn-back').addEventListener('click', function(){
+        maximizeLayout();
+    });
 });
 
 let wsc_onspeechend = function(){};
@@ -39,6 +41,8 @@ let maximizeLayout = function(){
     scaleTo(layout, {x:1, y:1, z:1}, 1500);
     dbubble.children[1].start();
 };
+
+
 
 //animation 
 function moveTo(obj, pos, time){

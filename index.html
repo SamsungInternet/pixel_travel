@@ -7,12 +7,13 @@
     <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/edf84e6e/webcomponents-sd-ce.js"></script>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="js/aframe-look-at-component.min.js"></script>
     <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
     <script src="js/a-layout.js"></script>
     <!-- <script src="js/devDet.js"></script> -->
     <script src="https://samsunginter.net/web-speech-component/js/webspeech-comp.js"></script>
     <script src="js/app.js"></script>
-    <title>Document</title>
+    <title>Pixelated Travel : A WebVR demo for AmsterdamJS 2018</title>
 </head>
 <body>
         <a-scene>
@@ -20,39 +21,46 @@
                     <a-asset-item id="world" src="models/worldmap.glb"></a-asset-item>
                     <img id="bg" src="imgs/bg.jpg">
                     <img id="foot" src="imgs/amsjs_foot.png">
+                    <img id="img-mic" src="imgs/btn_mic.png">
+                    <img id="img-back" src="imgs/btn_back.png">
                     <a-mixin id="teleSphere" scale="-1 1 1" radius=".6" shadow></a-mixin>
                     <a-mixin id="movable" draggable movable droppable></a-mixin>
-                    <a-mixin id="hoverable" hoverable stretchable></a-mixin>
+                    <a-mixin id="clickable" hoverable clickable ></a-mixin>
+                    <a-mixin id="pnl-btn" width=".2" height=".2"></a-mixin>
             </a-assets>
 
-            <a-entity camera look-controls></a-entity>
+            <a-entity camera look-controls id="cam"></a-entity>
 
-            <a-entity progressive-controls=" maxLevel: point">
+            <a-entity position="0 -2 -2" id="ctrl-pnl" look-at="#cam">
+                <a-image id="btn-back" src="#img-back" position="-.5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image>
+                <a-image id="btn-mic" src="#img-mic" position=".5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image>
+            </a-entity>
+
+            <a-entity progressive-controls="objects:.actionable; maxLevel: point">
                 <a-entity id="rhand" class="right-controller"></a-entity>
                 <a-entity id="lhand" class="left-controller"></a-entity>  
             </a-entity>
 
             <a-entity a-layout position="0 0 0">
-                <a-sphere src="imgs/360o/staines.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
-                <a-sphere src="imgs/360o/helsinki.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/seoul.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/sevilla.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/singapore.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/losangeles.jpg" class="telesphere" mixin="teleSphere hoverable" ></a-sphere>
-                <a-sphere src="imgs/360o/paris.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/sanjose.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
-                <a-sphere src="imgs/360o/jerusalem.jpg" class="telesphere" mixin="teleSphere hoverable"></a-sphere>
+                <a-sphere src="imgs/360o/staines.jpg" class="actionable" mixin="teleSphere " ></a-sphere>
+                <a-sphere src="imgs/360o/helsinki.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/seoul.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/sevilla.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/singapore.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/losangeles.jpg" class="actionable" mixin="teleSphere " ></a-sphere>
+                <a-sphere src="imgs/360o/paris.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/sanjose.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/jerusalem.jpg" class="actionable" mixin="teleSphere "></a-sphere>
             </a-entity>
             <a-sphere class="darken-bubble" color="#000" position="0 0 0" scale="1 1 1" radius="20" material="side:back" opacity=".7">
                 <a-animation attribute="opacity" dur="1000" fill="both" from=".7" begin="min" to="0"></a-animation>
                 <a-animation attribute="opacity" dur="1000" fill="both" from="0" begin="max" to=".7"></a-animation>
             </a-sphere>
 
-            <!-- <a-entity gltf-model="#world" position="0 -2 0" rotation="0 0 0"></a-entity> -->
             <a-sky src="#bg"></a-sky>
 
             <a-image src="#foot" position="0 -2 0" scale="3 3 3" rotation="-90 0 0"></a-image>
         </a-scene>
-        <web-speech class="btn_mic" vr></web-speech>
+        <!-- <web-speech class="btn_mic" vr></web-speech> -->
 </body>
 </html>
