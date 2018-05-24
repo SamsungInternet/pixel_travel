@@ -23,6 +23,7 @@
                     <img id="foot" src="imgs/amsjs_foot.png">
                     <img id="img-mic" src="imgs/btn_mic.png">
                     <img id="img-back" src="imgs/btn_back.png">
+                    <img id="hand" src="imgs/hand.png">
                     <a-mixin id="teleSphere" scale="-1 1 1" radius=".6" shadow></a-mixin>
                     <a-mixin id="movable" draggable movable droppable></a-mixin>
                     <a-mixin id="clickable" hoverable clickable ></a-mixin>
@@ -38,10 +39,10 @@
 
             <a-entity progressive-controls="objects:.actionable; maxLevel: point;controllerModel:false">
                 <a-entity id="rhand" class="right-controller">
-                    <a-box color="tomato" depth=".5" height=".5" width="0.5"></a-box>
+                    <a-box src="#hand" depth=".1" height=".1" width=".1"></a-box>
                 </a-entity>
                 <a-entity id="lhand" class="left-controller">
-                    <a-box color="green" depth=".5" height=".5" width="0.5"></a-box>
+                    <a-box src="#hand" depth=".1" height=".1" width=".1"></a-box>
                 </a-entity>  
             </a-entity>
 
