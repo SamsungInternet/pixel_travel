@@ -25,7 +25,7 @@ let layout_item_click = function(){
 };
 
 let changeSky = function(newsky){
-    document.querySelector('a-sky').setAttribute('src', 'https://diekus.com/vrtravel/'+newsky);
+    document.querySelector('a-sky').setAttribute('src', 'https://samsunginter.net/pixel_travel//'+newsky);
 };
 
 let minimizeLayout = function(){
