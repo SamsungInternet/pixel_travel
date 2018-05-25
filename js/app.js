@@ -65,8 +65,11 @@ let do_devDet_6DoF = function(gid, hand){
 
 let do_devDet_3DoF = function(gid, hand){
     let ctrl_3 = document.createElement('a-box');
-    ctrl_3.setAttribute('mixin', 'ctrl_hand');
+    ctrl_3.setAttribute('src', '#hand');
     ctrl_3.setAttribute('id', `c${gid}`);
+    ctrl_3.setAttribute('width', `.1`);
+    ctrl_3.setAttribute('height', `.1`);
+    ctrl_3.setAttribute('depth', `.1`);
     document.getElementById('rhand').appendChild(ctrl_3);
 };
 
