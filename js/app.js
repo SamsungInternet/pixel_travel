@@ -6,19 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     moveTo(ctrl_pnl, {x:0, y:-20, z:0}, 2000);
 });
 
-let wsc_onspeechend = function(){};
-
-let wsc_onresult = function(word){
-    switch(word){
-        case 'show places':
-            maximizeLayout();
-        break;
-        case 'hide places':
-            minimizeLayout();
-        break;
-    }
-};
-
 let layout_item_click = function(){
     changeSky(this.getAttribute('src'));
     minimizeLayout();
@@ -50,9 +37,43 @@ let maximizeLayout = function(){
     scaleTo(ctrl_pnl, {x:0.0001, y:0.001, z:0.001}, 1500);
 };
 
+/****
+***** device detection functions
+****/
+let do_devDet_6DoF = function(gid){
+};
 
+let do_devDet_3DoF = function(gid){
+};
 
-//animation 
+let do_devDet_0DoF = function(gid){
+};
+
+let do_devDet_disconnect = function(gid){
+    
+};
+
+/****
+***** speech recognition functions
+****/
+
+let wsc_onspeechend = function(){};
+
+let wsc_onresult = function(word){
+    switch(word){
+        case 'show places':
+            maximizeLayout();
+        break;
+        case 'hide places':
+            minimizeLayout();
+        break;
+    }
+};
+
+/****
+***** tween animation presets
+****/
+
 function moveTo(obj, pos, time){
     let tween_pos = new AFRAME.TWEEN.Tween(obj.object3D.position).to({x:pos.x, y:pos.y, z:pos.z}, time);
     tween_pos.easing(TWEEN.Easing.Exponential.Out);
