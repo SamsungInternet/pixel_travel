@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    if ('SamsungChangeSky' in window) {
+        window.SamsungChangeSky({ sphere: 'https://samsunginter.net/pixel_travel/imgs/bg.jpg' });
+    }
+
     document.getElementById('btn-back').addEventListener('click', function(){
         maximizeLayout();
     });
