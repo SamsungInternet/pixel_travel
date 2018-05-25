@@ -41,16 +41,23 @@ let maximizeLayout = function(){
 ***** device detection functions
 ****/
 let do_devDet_6DoF = function(gid){
+    let ctrl_6 = document.createElement('a-box');
+    ctrl_6.setAttribute('mixin', 'ctrl_hand');
+    ctrl_6.setAttribute('id', gid);
 };
 
 let do_devDet_3DoF = function(gid){
+    let ctrl_3 = document.createElement('a-box');
+    ctrl_3.setAttribute('mixin', 'ctrl_hand');
+    ctrl_3.setAttribute('id', gid);
 };
 
 let do_devDet_0DoF = function(gid){
 };
 
 let do_devDet_disconnect = function(gid){
-    
+    let ctrl_del = document.getElementById(gid);
+    ctrl_del.parentElement.remove(ctrl_del);
 };
 
 /****
