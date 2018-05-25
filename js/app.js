@@ -40,24 +40,38 @@ let maximizeLayout = function(){
 /****
 ***** device detection functions
 ****/
-let do_devDet_6DoF = function(gid){
+let do_devDet_6DoF = function(gid, hand){
     let ctrl_6 = document.createElement('a-box');
-    ctrl_6.setAttribute('mixin', 'ctrl_hand');
-    ctrl_6.setAttribute('id', gid);
+    ctrl_6.setAttribute('src', '#hand');
+    ctrl_6.setAttribute('id', `c${gid}`);
+    ctrl_6.setAttribute('width', `.1`);
+    ctrl_6.setAttribute('height', `.1`);
+    ctrl_6.setAttribute('depth', `.1`);
+    switch(hand){
+        case 'right':
+        document.getElementById('rhand').appendChild(ctrl_6);
+        break;
+        case 'left':
+            document.getElementById('lhand').appendChild(ctrl_6);
+        break;
+    }
+    
+    console.log(gid);
 };
 
-let do_devDet_3DoF = function(gid){
+let do_devDet_3DoF = function(gid, hand){
     let ctrl_3 = document.createElement('a-box');
     ctrl_3.setAttribute('mixin', 'ctrl_hand');
-    ctrl_3.setAttribute('id', gid);
+    ctrl_3.setAttribute('id', `c${gid}`);
+    document.getElementById('rhand').appendChild(ctrl_3);
 };
 
 let do_devDet_0DoF = function(gid){
 };
 
 let do_devDet_disconnect = function(gid){
-    let ctrl_del = document.getElementById(gid);
-    ctrl_del.parentElement.remove(ctrl_del);
+    let ctrl_del = document.getElementById(`c${gid}`);
+    ctrl_del.remove();
 };
 
 /****
