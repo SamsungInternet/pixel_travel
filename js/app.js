@@ -73,8 +73,14 @@ let do_devDet_3DoF = function(gid, hand){
     document.getElementById('rhand').appendChild(ctrl_3);
 };
 
-let do_devDet_0DoF = function(gid){
-    std_gamepad_listener(gid);
+let do_devDet_0DoF = function(gid, removeFuse){
+    if(gid == -1){
+        document.querySelector('[progressive-controls]').setAttribute('cursor', 'fuse:true; fuseTimeout:1500'); 
+    }
+    else{
+        //std_gamepad_listener(gid);
+        console.log(`detected gamepad index ${gid}`);
+    }
 };
 
 let do_devDet_disconnect = function(gid){
@@ -85,11 +91,11 @@ let do_devDet_disconnect = function(gid){
 function std_gamepad_listener(gid){
     gamepad = navigator.getGamepads()[`${gid}`];
     if(gamepad){
-      if(gamepad.buttons[1].pressed){
+      if(gamepad.buttons[3].pressed){
         //go back to start 
         maximizeLayout();
       }
-      if(gamepad.buttons[15].pressed){
+      if(gamepad.buttons[2].pressed){
           minimizeLayout();
       }
     }
