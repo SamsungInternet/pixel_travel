@@ -74,12 +74,27 @@ let do_devDet_3DoF = function(gid, hand){
 };
 
 let do_devDet_0DoF = function(gid){
+    std_gamepad_listener();
 };
 
 let do_devDet_disconnect = function(gid){
     let ctrl_del = document.getElementById(`c${gid}`);
     ctrl_del.remove();
 };
+
+function std_gamepad_listener(){
+    gamepad = navigator.getGamepads()[`${gid}`];
+    if(gamepad){
+      if(gamepad.buttons[1].pressed){
+        //go back to start 
+        maximizeLayout();
+      }
+      if(gamepad.buttons[15].pressed){
+          minimizeLayout();
+      }
+    }
+    window.requestAnimationFrame(std_gamepad_listener)
+}
 
 /****
 ***** speech recognition functions
@@ -121,3 +136,4 @@ function opacityTo(obj, op, time){
     console.log(tween_op);
     tween_op.start();
 }
+
