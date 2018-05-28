@@ -74,15 +74,15 @@ let do_devDet_3DoF = function(gid, hand){
 };
 
 let do_devDet_0DoF = function(gid){
-    std_gamepad_listener();
+    std_gamepad_listener(gid);
 };
 
 let do_devDet_disconnect = function(gid){
     let ctrl_del = document.getElementById(`c${gid}`);
-    ctrl_del.remove();
+    ctrl_del.remove(gid);
 };
 
-function std_gamepad_listener(){
+function std_gamepad_listener(gid){
     gamepad = navigator.getGamepads()[`${gid}`];
     if(gamepad){
       if(gamepad.buttons[1].pressed){
