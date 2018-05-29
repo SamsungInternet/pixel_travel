@@ -75,7 +75,7 @@ let do_devDet_3DoF = function(gid, hand){
 
 let do_devDet_0DoF = function(gid, removeFuse){
     if(gid == -1){
-        document.querySelector('[progressive-controls]').setAttribute('cursor', 'fuse:true; fuseTimeout:5500'); 
+        //document.querySelector('[progressive-controls]').setAttribute('cursor', 'fuse:true; fuseTimeout:5500'); 
     }
     else{
         //std_gamepad_listener(gid);
