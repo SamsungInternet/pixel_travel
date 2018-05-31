@@ -31,7 +31,7 @@
                     <a-mixin id="ctrl_hand" src="#hand" depth=".1" height=".1" width=".1">
             </a-assets>
 
-            <a-entity camera look-controls id="cam"></a-entity>
+            <a-entity camera position="0 1.6 0" look-controls id="cam"></a-entity>
 
             <a-entity position="0 -2 -2" id="ctrl-pnl" look-at="#cam">
                 <a-image id="btn-back" src="#img-back" position="-.5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image>
@@ -44,15 +44,15 @@
             </a-entity>
 
             <a-entity a-layout position="0 1.6 0">
-                <a-sphere src="imgs/360o/staines.jpg" class="actionable" mixin="teleSphere " ></a-sphere>
-                <a-sphere src="imgs/360o/helsinki.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/seoul.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/sevilla.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/singapore.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/losangeles.jpg" class="actionable" mixin="teleSphere " ></a-sphere>
-                <a-sphere src="imgs/360o/paris.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/sanjose.jpg" class="actionable" mixin="teleSphere "></a-sphere>
-                <a-sphere src="imgs/360o/jerusalem.jpg" class="actionable" mixin="teleSphere "></a-sphere>
+                <a-sphere src="imgs/360o/staines.jpg" class="actionable" mixin="teleSphere movable" ></a-sphere>
+                <a-sphere src="imgs/360o/helsinki.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
+                <a-sphere src="imgs/360o/seoul.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
+                <a-sphere src="imgs/360o/sevilla.jpg" class="actionable" mixin="teleSphere movable "></a-sphere>
+                <a-sphere src="imgs/360o/singapore.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
+                <a-sphere src="imgs/360o/losangeles.jpg" class="actionable" mixin="teleSphere movable" ></a-sphere>
+                <a-sphere src="imgs/360o/paris.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
+                <a-sphere src="imgs/360o/sanjose.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
+                <a-sphere src="imgs/360o/jerusalem.jpg" class="actionable" mixin="teleSphere movable"></a-sphere>
             </a-entity>
             <a-sphere class="darken-bubble" color="#000" position="0 0 0" scale="1 1 1" radius="20" material="side:back" opacity=".7">
                 <a-animation attribute="opacity" dur="1000" fill="both" from=".7" begin="min" to="0"></a-animation>
