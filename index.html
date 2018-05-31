@@ -33,9 +33,9 @@
 
             <a-entity camera position="0 1.6 0" look-controls id="cam"></a-entity>
 
-            <a-entity position="0 -2 -2" id="ctrl-pnl" look-at="#cam">
+            <a-entity position="0 1 -2" id="ctrl-pnl" look-at="#cam">
                 <a-image id="btn-back" src="#img-back" position="-.5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image>
-                <a-image id="btn-mic" src="#img-mic" position=".5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image>
+                <!-- <a-image id="btn-mic" src="#img-mic" position=".5 0 0" mixin="pnl-btn" class="actionable" clickable></a-image> -->
             </a-entity>
 
             <a-entity progressive-controls="objects:.actionable; maxLevel: point;controllerModel:false">
