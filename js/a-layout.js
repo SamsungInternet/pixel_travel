@@ -42,7 +42,7 @@ AFRAME.registerComponent('a-layout', {
         };
         switch(this.data.shape){
             case 'circle':
-            this.setCircle(6);
+            this.setCircle(4);
                 this.rotate.start();
                 break;
             case 'grid':
